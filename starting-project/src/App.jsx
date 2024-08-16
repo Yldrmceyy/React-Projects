@@ -1,28 +1,11 @@
 /* eslint-disable react/prop-types */
 
-import reactImg from "./assets/react-core-concepts.png";
+
 
 import { CORE_CONCEPTS } from "./data.js";
 
-const reactDescriptions = ["Fundamental", "Crucial", "Core"];
+import Header from "./components/Header.jsx";
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header() {
-  const description = reactDescriptions[getRandomInt(2)];
-  return (
-    <header>
-      <img src={reactImg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {description} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
 
 function CoreConcept({ image, title, description }) {
   return (
