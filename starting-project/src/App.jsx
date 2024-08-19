@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
 
-import { CORE_CONCEPTS } from "./data.js";
+import { useState } from "react";
 
 import Header from "./components/Header.jsx";
-import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
-import { useState } from "react";
+import CoreConcept from "./components/CoreConcept.jsx";
 import { EXAMPLES } from "./data.js";
 
 function App() {
