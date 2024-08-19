@@ -6,7 +6,7 @@ export default function Player({ name, symbol }) {
 
   // 2. Butona tıklandığında durumu güncelleyen fonksiyon
   const handleEditClick = () => {
-    setIsEditing(isEditing ? false : true);
+    setIsEditing(!isEditing);         //isEditing ? false : true   aynı    
   };
 
   let playerName = <span className="player-name">{name}</span>;
