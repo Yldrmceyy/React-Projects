@@ -19,7 +19,7 @@ export default function Quiz() {
   return (
     <div id="question">
       <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
-      <ul>
+      <ul id="answers">
         {QUESTIONS[activeQuestionIndex].answers.map((answer) => (
           <li key={answer} className="answer">
             <button onClick={() => handleSelectAnswer(answer)}>
