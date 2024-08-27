@@ -1,8 +1,13 @@
 import { useState } from "react";
+import QUESTIONS from "../question.JS";
 
 export default function Quiz() {
-  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const activeQuestionIndex = userAnswers.length;
 
-  const [userAnswers, setUserAnswers]=useState([])
-  return <p>Currenty active Question</p>;
+  return (
+    <div id="question">
+      <h2> {QUESTIONS[activeQuestionIndex]}</h2>;
+    </div>
+  );
 }
