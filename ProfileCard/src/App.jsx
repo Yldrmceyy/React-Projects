@@ -27,7 +27,7 @@ function SkillList() {
       <Skill skill="JavaScript" emoji="💪🏽" color="#facc15" />
       <Skill skill="HTML+CSS" emoji="💪🏽" color="#60a5fa" />
       <Skill skill="Java" emoji="💪🏽" color="#f87171" />
-      <Skill skill="Spring" emoji="💪🏽" color="#84cc16" />
+      <Skill skill="Spring" emoji="🍃" color="#84cc16" />
       <Skill />
     </div>
   );
