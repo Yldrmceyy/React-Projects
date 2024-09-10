@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./styles.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+import React from "react";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function Avatar() {
+  return <img className="avatar" src="ceylan.jpg" alt="Ceylan Yıldırım " />;
 }
 
-export default App
+function Intro() {
+  return (
+    <div>
+      <h1 className="title">Ceylan Yıldırım</h1>
+      <p>
+        {" "}
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.{" "}
+      </p>
+    </div>
+  );
+}
+
+function SkillList() {
+  return (
+    <div className="skill-list">
+      <Skill skill="React" emoji="💪🏽" color="#a78bfa" />
+      <Skill skill="JavaScript" emoji="💪🏽" color="#facc15" />
+      <Skill skill="HTML+CSS" emoji="💪🏽" color="#60a5fa" />
+      <Skill skill="Java" emoji="💪🏽" color="#f87171" />
+      <Skill skill="Spring" emoji="💪🏽" color="#84cc16" />
+      <Skill />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{backgroundColor: props.color}}>
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div className="card">
+      <Avatar />
+      <div className="data">
+        <Intro />
+        {/* Should contain one Skill component
+        for each web dev skill that you have,
+        customized with props */}
+        <SkillList />
+      </div>
+    </div>
+  );
+}
+
+export default App;
