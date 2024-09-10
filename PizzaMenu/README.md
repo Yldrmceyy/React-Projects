@@ -1,8 +1,15 @@
-# React + Vite
+# Fast React Pizza Co.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Fast React Pizza Co.** is a dynamic pizza menu app built using React. It displays a list of pizzas from a data file, shows whether the restaurant is open or closed based on the current time, and highlights pizzas that are sold out. This project demonstrates core React concepts like components, props, and conditional rendering.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live version of the app:  
+[Live Demo](https://your-demo-link.com)
+
+## Features
+
+- **Pizza Menu:** Displays a list of pizzas with their name, ingredients, and price.
+- **Restaurant Status:** Uses the current time to determine if the restaurant is open, and displays an order button only if the restaurant is open.
+- **Sold-Out Pizzas:** Dynamically marks pizzas as "SOLD-OUT" and applies styling accordingly.
+- **Responsive Design:** The app adapts to different screen sizes, making it user-friendly on all devices.
