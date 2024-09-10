@@ -49,13 +49,35 @@ function Pizza({ pizzaObj }) {
   );
 }
 
-function Footer( ) {
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 23;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
   return (
     <footer className="footer">
-      <p>&copy; 2023 Fast React Pizza Co.</p>
+    {isOpen ? (
+      <Order closeHour={closeHour} openHour={openHour} />
+    ):(
+      <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+        </p>
+    )}
+      
     </footer>
-  )
-  }
+  );
+}
+
+function Order({openHour,closeHour}) {
+  return <div className="order">
+    <p>
+    We're open from {openHour}:00 to   {closeHour}:00. Come visit us or order
+    online.
+    </p>
+    <button className="btn">Order</button>
+  </div>;
+}
 
 function App() {
   return (
@@ -63,7 +85,8 @@ function App() {
       <div className="container">
         <Header />
         <Menu />
-        <Footer/>
+        <Footer />
+      
       </div>
     </>
   );
