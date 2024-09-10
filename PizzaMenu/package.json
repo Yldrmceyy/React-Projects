@@ -1,5 +1,5 @@
 {
-  "name": "tic-tac-toe",
+  "name": "pizzamenu",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pizzamenu": "file:",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tic-tac-toe": "file:"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
