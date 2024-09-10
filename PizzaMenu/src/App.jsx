@@ -49,12 +49,21 @@ function Pizza({ pizzaObj }) {
   );
 }
 
+function Footer( ) {
+  return (
+    <footer className="footer">
+      <p>&copy; 2023 Fast React Pizza Co.</p>
+    </footer>
+  )
+  }
+
 function App() {
   return (
     <>
       <div className="container">
         <Header />
         <Menu />
+        <Footer/>
       </div>
     </>
   );
