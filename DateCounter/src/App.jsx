@@ -5,6 +5,15 @@ function Counter() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(0);
 
+function handleReset() {
+  setCount(0);
+  setStep(1);
+
+}
+  
+
+
+
   const date = new Date("june 21 2027");
   date.setDate(date.getDate() + count);
   return (
@@ -23,7 +32,11 @@ function Counter() {
 
       <div>
         <button onClick={() => setCount((c) => c - step)}> - </button>
-        <span> Count : {count} </span>
+        <input
+          type="text"
+          value={count}
+          onChange={(e) => setCount(Number(e.target.value))}
+        />
         <button onClick={() => setCount((c) => c + step)}> + </button>
       </div>
 
@@ -37,6 +50,9 @@ function Counter() {
         </span>
         <span>{date.toDateString()}</span>
       </p>
+      <div>
+        <button onClick={handleReset}>  Reset</button>
+      </div>
     </div>
   );
 }
