@@ -62,6 +62,7 @@ function handleClick(id) {
 function App() {
   return (
     <div className="App">
+    <h1>FLASH CARDS</h1>
       <FlashCards />
     </div>
   );
