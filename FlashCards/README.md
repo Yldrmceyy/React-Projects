@@ -1,8 +1,12 @@
-# React + Vite
+# Flash Cards
+This React application is designed to help you learn fundamental React concepts through a flashcard system. Each card contains a question and its corresponding answer. When a user clicks on a card, the answer is displayed. Clicking the same card again hides the answer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can view a live demo of this project - [Live](https://react-projects-ck2k.vercel.app/)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Question and Answer Cards**: Each card displays a question and an answer.
+- **Toggle Feature**: Clicking on a card reveals the answer, and clicking again hides it.
+- **Responsive Design**: Styled with CSS to adapt to various screen sizes.
+
+
