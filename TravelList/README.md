@@ -2,7 +2,7 @@
 This is a simple React application that helps users manage their packing list for trips. Users can add items, mark them as packed, and remove them from the list. It also includes sorting features and a clear list option.
 
 ## Live Demo
-[Live Demo](https://react-projects-pd54.vercel.app/)
+[Live Demo](https://react-projects-p2oj.vercel.app/)
 
 ## Features
 
