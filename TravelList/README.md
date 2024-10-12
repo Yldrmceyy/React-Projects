@@ -1,8 +1,25 @@
-# React + Vite
+# Travel List App 🧳
+This is a simple React application that helps users manage their packing list for trips. Users can add items, mark them as packed, and remove them from the list. It also includes sorting features and a clear list option.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Demo
+[Live Demo](https://react-projects-pd54.vercel.app/)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add Items**: Add items to the packing list with a description and quantity.
+- **Mark as Packed**: Mark items as packed or unpacked using a checkbox.
+- **Delete Items**: Remove individual items from the list.
+- **Clear List**: Clear the entire list with a confirmation prompt.
+- **Sorting**: Sort the list by input order, description (alphabetically), or packed status.
+- **Statistics**: Displays total items and packed percentage.
+
+## Components
+
+- **App**: Manages the state of the application and renders the main layout.
+- **Item**: Displays individual items in the list with functionality to toggle packed status and delete.
+- **PackingList**: Renders the list of items and provides sorting options.
+- **Form**: Allows users to add new items to the packing list.
+- **Stats**: Displays stats about the items, including the number of packed items and the packing percentage.
+
+
+
