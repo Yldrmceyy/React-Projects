@@ -27,8 +27,14 @@ export default function App() {
   }
 
   function handleClearList() {
-    setItems([]);
+    const confirmed= window.confirm("Are you sure you want to delete all items? ");
+    
+    if(confirmed) setItems([]);
   }
+
+
+
+
   return (
     <div className="app">
       <Logo />
@@ -94,7 +100,7 @@ function Form({ onAddItems }) {
   );
 }
 
-function PackingList({ items, onDeleteItem, onToggleItem ,onClearList}) {
+function PackingList({ items, onDeleteItem, onToggleItem, onClearList }) {
   const [sortBy, setSortBy] = useState("input");
 
   let sortedItems;
