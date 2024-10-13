@@ -1,5 +1,3 @@
-import "./App.css";
-
 const faqs = [
   {
     title: "Where are these chairs assembled?",
