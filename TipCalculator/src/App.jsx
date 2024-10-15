@@ -11,12 +11,20 @@ export default function App() {
 
 function TipCalculator() {
   const [bill, setBill] = useState("");
+  const [percentage1, setPercentage1] = useState(0);
+  const [percentage2, setPercentage2] = useState(0);
+
+  const tip = bill * ((percentage1 + percentage2)/2/100);
   return (
     <div>
       <BillInput bill={bill} onSetBill={setBill} />
-      <SelectPercentage>How did you like the service? </SelectPercentage>
-      <SelectPercentage>How did your friend like the service?</SelectPercentage>
-      <Output bill={bill} />
+      <SelectPercentage percentage={percentage1} onSelect={setPercentage1}>
+        How did you like the service?{" "}
+      </SelectPercentage>
+      <SelectPercentage percentage={percentage2} onSelect={setPercentage2}>
+        How did your friend like the service?
+      </SelectPercentage>
+      <Output bill={bill} tip={tip}/>
       <Reset />
     </div>
   );
@@ -30,17 +38,20 @@ function BillInput({ bill, onSetBill }) {
         type="text"
         placeholder="Bill amount"
         value={bill}
-        onChange={(e) => onSetBill((e.target.value))}
+        onChange={(e) => onSetBill(Number(e.target.value))}
       />
     </div>
   );
 }
 
-function SelectPercentage({ children }) {
+function SelectPercentage({ children, percentage, onSelect }) {
   return (
     <div>
       <label> {children}</label>
-      <select>
+      <select
+        value={percentage}
+        onChange={(e) => onSelect(Number(e.target.value))}
+      >
         <option value="0">Dissatisfied (0%)</option>
         <option value="5">It was okay (5%)</option>
         <option value="10">It was good (10%)</option>
@@ -50,10 +61,10 @@ function SelectPercentage({ children }) {
   );
 }
 
-function Output({bill}) {
+function Output({ bill,tip }) {
   return (
     <div>
-      <h3> You pay X (${bill} + $B tip)</h3>
+      <h3> You pay {bill+tip} (${bill} + ${tip} tip)</h3>
     </div>
   );
 }
