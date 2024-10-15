@@ -1,8 +1,8 @@
-# React + Vite
+# Tip Calculator
+A simple React application that calculates the tip based on the bill amount and service ratings. Users can reset the values to start a new calculation.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Input bill amount
+- Select service rating for two people
+- Calculate total amount including tip
+- Reset functionality
