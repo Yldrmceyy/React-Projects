@@ -1,8 +1,10 @@
-# React + Vite
+# Basic Bungalow Reservation App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application allows users to add new bungalows and make reservations for existing ones. It provides a simple system for selecting a bungalow and submitting a reservation.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- View a list of available bungalows and select one for reservation.
+- Add new bungalows with name, image URL, and price.
+- Display details like ID, price, and name of the selected bungalow for reservation.
+- Make a reservation for a selected bungalow with a user's name.
