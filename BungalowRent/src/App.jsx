@@ -150,15 +150,33 @@ function FormAddBungalow({ onAddBungalow }) {
   );
 }
 
-function FormReservation() {
+function FormReservation({selectedBungalow}) {
+  const [name, setName] = useState("");
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!name) {
+      alert("Please enter your name to make a reservation.");
+      return;
+    }
+    alert(`Reservation confirmed for ${selectedBungalow.name}, by ${name}.`);
+    setName(""); 
+  }
   return (
-    <form className="form-reservation">
+    <form className="form-reservation" onSubmit={handleSubmit}>
       <h2>Reserve Bungalow</h2>
       <label>Bungalow ID</label>
-      <input type="text" />
+      <input type="text" value={selectedBungalow.id} disabled />
+      <label>Bungalow Name</label>
+      <input type="text" value={selectedBungalow.name} disabled />
+      <label>Price</label>
+      <input type="text" value={`$${selectedBungalow.price}`} disabled />
       <label>Your Name</label>
-      <input type="text" />
-      <button className="button">Reserve</button>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <Button>Reserve</Button>
     </form>
   );
 }
