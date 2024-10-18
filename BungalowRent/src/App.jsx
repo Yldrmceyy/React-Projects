@@ -45,7 +45,7 @@ function App() {
 
   function handleSelectBungalow(bungalow) {
     setSelectedBungalow((cur) => (cur?.id === bungalow.id ? null : bungalow));
-    setShowAddFriend(false);
+   
   }
 
   return (
