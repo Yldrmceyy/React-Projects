@@ -32,6 +32,7 @@ function Button({ children, onClick }) {
 function App() {
   const [bungalows, setBungalows] = useState(initialBungalows);
   const [showAddBungalow, setShowAddBungalow] = useState(false);
+  const [selectedBungalow, setSelectedBungalow] = useState(false);
 
   function handleShowAddBungalow() {
     return setShowAddBungalow(!showAddBungalow);
@@ -42,20 +43,30 @@ function App() {
     setShowAddBungalow(false);
   }
 
+  function handleSelectBungalow(bungalow) {
+    setSelectedBungalow((cur) => (cur?.id === bungalow.id ? null : bungalow));
+    setShowAddFriend(false);
+  }
+
   return (
     <div className="app">
       <div className="left-column">
-        <BungalowList 
+        <BungalowList
           bungalows={bungalows}
-          
+          selectedBungalow={selectedBungalow}
+          onSelection={handleSelectBungalow}
         />
-        {showAddBungalow && <FormAddBungalow onAddBungalow={handleAddBungalow} />}
+        {showAddBungalow && (
+          <FormAddBungalow onAddBungalow={handleAddBungalow} />
+        )}
         <Button onClick={handleShowAddBungalow}>
           {showAddBungalow ? "Close" : "Add Bungalow"}
         </Button>
       </div>
       <div className="right-column">
-        <FormReservation />
+        {selectedBungalow && (
+          <FormReservation selectedBungalow={selectedBungalow} />
+        )}
       </div>
     </div>
   );
@@ -63,32 +74,39 @@ function App() {
 
 export default App;
 
-function BungalowList({bungalows }) {
+function BungalowList({ bungalows, onSelection, selectedBungalow }) {
   return (
     <div className="bungalow-list">
       <h1>Bungalow List</h1>
       <ul>
         {bungalows.map((bungalow) => (
-          <BungalowItem bungalow={bungalow} key={bungalow.id}
-           />
+          <BungalowItem
+            bungalow={bungalow}
+            key={bungalow.id}
+            selectedBungalow={selectedBungalow}
+            onSelection={onSelection}
+          />
         ))}
       </ul>
     </div>
   );
 }
 
-function BungalowItem({ bungalow }) {
+function BungalowItem({ bungalow, onSelection ,selectedBungalow}) {
+  const isSelected=selectedBungalow?.id === bungalow.id;
   return (
     <li className="bungalow-item">
       <img src={bungalow.image} alt="Bungalow Image" />
       <h3>{bungalow.name}</h3>
       <p>Price: ${bungalow.price}</p>
-      <button className="button">Select For Reservation</button>
+      <Button onClick={() => onSelection(bungalow)}>
+        {isSelected ? "Close" : "Selected for Reserve"}
+      </Button>
     </li>
   );
 }
 
-function FormAddBungalow({onAddBungalow}) {
+function FormAddBungalow({ onAddBungalow }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://loremflickr.com/320/320/house");
   const [price, setPrice] = useState("");
@@ -101,7 +119,7 @@ function FormAddBungalow({onAddBungalow}) {
       id,
       name,
       image,
-      price :Number(price),
+      price: Number(price),
     };
     onAddBungalow(newBungalow);
   }
