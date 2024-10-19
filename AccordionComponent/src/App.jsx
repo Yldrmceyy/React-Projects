@@ -29,20 +29,22 @@ function Accordion({ data }) {
   return (
     <div className="accordion">
       {data.map((el, i) => (
-        <AccordionItem 
-        curOpen={curOpen}
-        onOpen={setCurOpen}
-        key={el.title} title={el.title} num={i} 
+        <AccordionItem
+          curOpen={curOpen}
+          onOpen={setCurOpen}
+          key={el.title}
+          title={el.title}
+          num={i}
         >
-        {el.text}
+          {el.text}
         </AccordionItem>
       ))}
     </div>
   );
 }
 
-function AccordionItem({ num, title , curOpen,onOpen,children}) {
- const isOpen= num===curOpen;
+function AccordionItem({ num, title, curOpen, onOpen, children }) {
+  const isOpen = num === curOpen;
   function handleToggle() {
     onOpen(num);
   }
