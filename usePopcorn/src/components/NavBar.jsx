@@ -1,20 +1,21 @@
+import React from 'react';
 
-export default function NavBar({ query, setQuery, movies }) {
+export default function NavBar({ query, setQuery, movieCount }) {
   return (
     <nav className="nav-bar">
       <div className="logo">
-        <span role="img">🍿</span>
+        <span role="img" aria-label="popcorn">🍿</span>
         <h1>usePopcorn</h1>
       </div>
       <input
         className="search"
         type="text"
-        placeholder="Film ara..."
+        placeholder="Search movies..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
       <p className="num-results">
-        <strong>{movies.length}</strong> film bulundu
+        Found <strong>{movieCount}</strong> results
       </p>
     </nav>
   );
