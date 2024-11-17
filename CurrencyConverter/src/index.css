@@ -1,4 +1,83 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+/* Genel ayarlar */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff, #fef3c7);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  box-sizing: border-box;
 }
+
+/* Ana konteyner */
+div {
+  background-color: #d9d9d9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Input alanı */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.2);
+}
+
+/* Dropdown menüler */
+select {
+  width: 48%;
+  padding: 10px;
+  margin: 0 1%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.2);
+}
+
+/* Sonuç metni */
+p {
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #10b981;
+}
+
+/* Hover efektleri */
+input[type="text"]:hover,
+select:hover {
+  border-color: #6366f1;
+}
+
+/* Loom Companion Kaldırma */
+#loom-companion-mv3 {
+  display: none !important;
+}
+
+
