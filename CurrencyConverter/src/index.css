@@ -1,7 +1,7 @@
 /* Genel ayarlar */
 body {
   font-family: 'Roboto', Arial, sans-serif;
-  background: linear-gradient(135deg, #e0e7ff, #fef3c7);
+  background: linear-gradient(135deg, #9a95ef, #8df3d1);
   margin: 0;
   padding: 0;
   display: flex;
@@ -14,7 +14,7 @@ body {
 
 /* Ana konteyner */
 div {
-  background-color: #d9d9d9;
+  background-color: #e0e0e0;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
