@@ -1,8 +1,10 @@
-# React + Vite
+# React Geolocation Custom Hook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to create and use a custom hook (`useGeolocation`) in React to manage geolocation data efficiently.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Get Location:** Retrieves the user's geolocation (latitude and longitude) using the browser's Geolocation API.
+- **State Management:** Tracks the loading state and handles errors during the geolocation process.
+- **Map Link:** Provides a link to OpenStreetMap to view the user's location.
+- **Reusable Hook:** Encapsulates geolocation logic into a reusable custom hook.
