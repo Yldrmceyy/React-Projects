@@ -1,19 +1,40 @@
 import { useState } from "react";
+import useGeolocation from "./useGeolocation";
 function App() {
   const [countClicks, setCountClicks] = useState(0);
+  const {
+    isLoading,
+    position: { lat, lng },
+    error,
+    getPosition
+  } = useGeolocation();
 
   const handleClick = () => {
     setCountClicks((prev) => prev + 1);
-    // Konum alma işlemi burada çalışacak.
+    getPosition();
   };
 
   return (
     <div>
-      <button onClick={handleClick}>
-        Get Position
+      <button onClick={handleClick} disabled={isLoading}>
+      Get my position
       </button>
-      <p>Number of requests: {countClicks}</p>
-      {/* Konum ve hata mesajları burada gösterilecek */}
+
+      {isLoading && <p>Loading position...</p>}
+      {error && <p>{error}</p>}
+      {!isLoading && !error && lat && lng && (
+        <p>
+          Your GPS position:{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}
+          >
+            {lat}, {lng}
+          </a>
+        </p>
+      )}
+      <p>You requested position {countClicks} times</p>
     </div>
   );
 }
