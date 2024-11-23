@@ -1,4 +1,3 @@
-import "./App.css";
 import Header from "./Header.jsx";
 import Top from "./Top.jsx";
 import Loader from "./Loader.jsx";
@@ -6,6 +5,7 @@ import Error from "./Error.jsx";
 import { useEffect, useReducer } from "react";
 import StartScreen from "./StartScreen.jsx";
 import Question from "./Question.jsx";
+import Options from "./Options.jsx";
 
 const initialState = {
   questions: [],
@@ -57,6 +57,7 @@ export default function App() {
         {status === "error" && <Error />}
         {status === "ready" && <StartScreen numQuestions={numQuestions} dispatch={dispatch}/>}
         {status === "active" && <Question question={questions[index]}/>}
+
       </Top>
     </div>
   );
