@@ -3,6 +3,7 @@ import Header from "./Header.jsx";
 import Top from "./Top.jsx";
 import { useEffect, useReducer } from "react";
 
+
 const initialState = {
   questions: [],
   //loading, error,ready,active, finished
@@ -14,7 +15,7 @@ function reducer(state, action) {
     case "dataReceived":
       return {
         ...state,
-        questions: action.questions,
+        questions: action.payload,
         status: "ready",
       };
     case "dataFailed":
