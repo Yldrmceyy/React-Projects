@@ -1,16 +1,41 @@
 import "./App.css";
 import Header from "./Header.jsx";
 import Top from "./Top.jsx";
-import {useEffect} from  "react";
+import { useEffect, useReducer } from "react";
 
-function App() {
+const initialState = {
+  questions: [],
+  //loading, error,ready,active, finished
+  status: "loading",
+};
 
-  useEffect(function(){
+function reducer(state, action) {
+  switch (action.type) {
+    case "dataReceived":
+      return {
+        ...state,
+        questions: action.questions,
+        status: "ready",
+      };
+    case "dataFailed":
+      return {
+        ...state,
+        status: "error",
+      };
+
+    default:
+      throw new Error("Action unknown");
+  }
+}
+export default function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(function () {
     fetch("http://localhost:9000/questions")
-    .then((res)=>res.json())
-    .then((data)=>console.log(data))
-    .catch((err) => console.log(`Error: ${err.message}`));
-  },[]);
+      .then((res) => res.json())
+      .then((data) => dispatch({ type: "dataReceived", payload: data }))
+      .catch((err) => dispatch({type:"dataFailed"}));
+  }, []);
 
   return (
     <div className="app">
@@ -22,5 +47,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
