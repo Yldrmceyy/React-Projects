@@ -6,6 +6,7 @@ import { useEffect, useReducer } from "react";
 import StartScreen from "./StartScreen.jsx";
 import Question from "./Question.jsx";
 import Options from "./Options.jsx";
+import NextButton from "./NextButton.jsx";
 
 const initialState = {
   questions: [],
@@ -85,7 +86,7 @@ export default function App() {
             dispatch={dispatch}
             answer={answer}
           />
-          <NextButton dispatch={dispatch}/>
+          <NextButton dispatch={dispatch} answer={answer}/>
           </>
         )}
       </Top>
