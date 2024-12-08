@@ -1,8 +1,23 @@
-# React + Vite
+# React Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic quiz application built with React, utilizing the `useReducer` hook for state management and incorporating features like a timer, progress tracking, and a high score system.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Dynamic Questions:** Load questions from a local JSON server or API.
+- **Timer:** Allocates a dynamic amount of time based on the number of questions.
+- **Progress Tracking:** Displays current question number, score, and a progress bar.
+- **High Score:** Tracks and displays the highest score achieved.
+- **Restart Quiz:** Restart the quiz anytime.
+- **Responsive Design:** Optimized for different screen sizes.
+
+---
+
+## Tech Stack
+
+- **React:** Front-end framework.
+- **JavaScript (ES6+):** Application logic.
+- **CSS:** Basic styling.
+- **JSON Server:** Local server to simulate an API.
