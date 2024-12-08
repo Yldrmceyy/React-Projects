@@ -36,7 +36,7 @@ function reducer(state, action) {
       };
     case "newAnswer":
       const question = state.questions.at(state.index);
-      
+
       return {
         ...state,
         answer: action.payload,
@@ -45,6 +45,11 @@ function reducer(state, action) {
             ? state.points + question.points
             : state.points,
       };
+      case "nextQuestion":
+        return {
+          ...state,
+          index: state.index + 1,
+        }
     default:
       throw new Error("Action unknown");
   }
@@ -74,11 +79,14 @@ export default function App() {
           <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
         )}
         {status === "active" && (
+          <>
           <Question
             question={questions[index]}
             dispatch={dispatch}
             answer={answer}
           />
+          <NextButton dispatch={dispatch}/>
+          </>
         )}
       </Top>
     </div>
