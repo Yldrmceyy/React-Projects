@@ -6,6 +6,7 @@ import { useEffect, useReducer } from "react";
 import StartScreen from "./StartScreen.jsx";
 import Question from "./Question.jsx";
 import NextButton from "./NextButton.jsx";
+import Progress from "./Progress.jsx";
 
 const initialState = {
   questions: [],
@@ -80,6 +81,7 @@ export default function App() {
         )}
         {status === "active" && (
           <>
+          <Progress index={index} numQuestion={numQuestions}/>
           <Question
             question={questions[index]}
             dispatch={dispatch}
