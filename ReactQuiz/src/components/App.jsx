@@ -5,7 +5,6 @@ import Error from "./Error.jsx";
 import { useEffect, useReducer } from "react";
 import StartScreen from "./StartScreen.jsx";
 import Question from "./Question.jsx";
-import Options from "./Options.jsx";
 import NextButton from "./NextButton.jsx";
 
 const initialState = {
@@ -49,7 +48,7 @@ function reducer(state, action) {
       case "nextQuestion":
         return {
           ...state,
-          index: state.index + 1,
+          index: state.index + 1, answer:null
         }
     default:
       throw new Error("Action unknown");

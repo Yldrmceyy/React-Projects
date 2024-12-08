@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
 
-function NextButton({dispatch}) {
+function NextButton({ dispatch, answer }) {
+  if (answer === null) return null;
   return (
-    <div>NextButton</div>
-  )
+    <button
+      className="btn btn-ui"
+      onClick={() => dispatch({ type: "nextQuestion" })}
+    >
+      Next
+    </button>
+  );
 }
 
-export default NextButton
+export default NextButton;
