@@ -11,7 +11,7 @@ import Progress from "./Progress.jsx";
 import FinishScreen from "./FinishScreen.jsx";
 import Footer from "./Footer.jsx";
 import Timer from "./Timer.jsx";
-
+const SECS_PER_QUESTION= 30;
 const initialState = {
   questions: [],
   //loading, error,ready,active, finished
@@ -20,7 +20,7 @@ const initialState = {
   answer: null,
   points: 0,
   highscore: 0,
-  secondsRemaining:10
+  secondsRemaining:null
 };
 
 function reducer(state, action) {
@@ -40,6 +40,7 @@ function reducer(state, action) {
       return {
         ...state,
         status: "active",
+        secondsRemaining:state.questions.length * SECS_PER_QUESTION
       };
     case "newAnswer":
       const question = state.questions.at(state.index);
