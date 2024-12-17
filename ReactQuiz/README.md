@@ -28,26 +28,26 @@ A dynamic quiz application built with React, utilizing the `useReducer` hook for
 
    ```bash
    git clone https://github.com/Yldrmceyy/React-Projects/tree/7d57b43bc32dbf3677efb1bea0a0bcee4b86c417/ReactQuiz
-   cd react-quiz-app
 
+   cd react-quiz-app
    ```
 
 2. **Install Dependencies**
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 3. **Start JSON Server**
 
-```bash
-npm run server
-```
+    ```bash
+    npm run server
+    ```
 
-The JSON server will run at http://localhost:9000.
+    The JSON server will run at http://localhost:9000.
 
 4. **Run the Development Server**
 
-```bash
-npm run dev
-```
+    ```bash
+    npm run dev
+    ```
