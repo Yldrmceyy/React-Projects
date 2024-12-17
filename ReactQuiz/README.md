@@ -3,6 +3,7 @@
 A dynamic quiz application built with React, utilizing the `useReducer` hook for state management and incorporating features like a timer, progress tracking, and a high score system.
 
 ---
+[Live Demo](https://reactquiizz-app.netlify.app/)
 
 ## Features
 
