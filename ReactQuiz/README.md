@@ -21,3 +21,10 @@ A dynamic quiz application built with React, utilizing the `useReducer` hook for
 - **JavaScript (ES6+):** Application logic.
 - **CSS:** Basic styling.
 - **JSON Server:** Local server to simulate an API.
+
+## Setup and Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Yldrmceyy/React-Projects/tree/7d57b43bc32dbf3677efb1bea0a0bcee4b86c417/ReactQuiz
+   cd react-quiz-app
